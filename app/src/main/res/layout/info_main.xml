@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InfoActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="360dp"
+        android:layout_height="354dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="188dp"
+        android:layout_marginEnd="26dp"
+        android:layout_marginBottom="189dp"
+        android:text="We would like to present JAR, a mobile app used for people in an urban setting to donate their bottles and cans to people who need it. New York State recently passed a law called the Bottle Bill which requires consumers of recyclable beverages to pay the bottle deposit fee for each can or bottle they purchase. Most people simply pay this bottle deposit fee and do not think about going through the hassle of returning all their emptied cans and bottles. However, many people in need would love to make use of these cans and bottles as they would go through the process of depositing them to obtain that bottle deposit fee back. A donator would simply have to put their cans and bottles in a trash bag and leave it outside with its location and picture for a donee to pick up. This process not only helps people in need but also encourages people to recycle as they know these items will be deposited back. Our app provides a way for people who recycle but don’t go through the process of depositing these items back to donate their bags of cans and bottles to people in need who would make use of such items. "
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="166dp"
+        android:layout_marginEnd="167dp"
+        android:layout_marginBottom="34dp"
+        android:text="Our Mission:"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

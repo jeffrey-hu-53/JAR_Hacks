@@ -37,6 +37,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, DoneeActivity.class));
             }
         });
+
+        Button infoButt = (Button) findViewById(R.id.infoButt);
+
+        infoButt.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v){
+                startActivity(new Intent(MainActivity.this, InfoActivity.class));
+            }
+        });
     }
 
 
