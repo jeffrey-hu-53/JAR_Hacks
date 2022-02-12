@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "147808562459",
+    "project_id": "jarhacks",
+    "storage_bucket": "jarhacks.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147808562459:android:2cd31720e46bdb105737be",
+        "android_client_info": {
+          "package_name": "com.example.jar_hacks"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147808562459-h1relm109jscu6hl677ihesf2oqikues.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAPs51yYnR_rWokcpAeBHEaifmOz5w5Hb0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147808562459-h1relm109jscu6hl677ihesf2oqikues.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
