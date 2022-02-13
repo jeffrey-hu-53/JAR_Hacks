@@ -4,6 +4,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -59,22 +63,6 @@ public class DonatorActivity extends AppCompatActivity {
             }
         });
 
-<<<<<<< Updated upstream
-        ActivityCompat.requestPermissions( this,
-                new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
-        showLocation = findViewById(R.id.showLocation);
-        btnGetLocation = findViewById(R.id.btnGetLocation);
-        btnGetLocation.setOnClickListener(v -> {
-            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-            if (!locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-                System.out.println("if provider not enabled");
-                OnGPS();
-
-            } else {
-                System.out.println("if provider is enabled");
-                getLocation();
-
-=======
         requestPermission();
         client = LocationServices.getFusedLocationProviderClient(this);
         Button button = findViewById(R.id.btnGetLocation);
@@ -88,13 +76,9 @@ public class DonatorActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(Object o) {
                         Location location = (Location)o;
-                        if (location != null) {
-                            TextView textView = findViewById(R.id.showLocation);
-                            textView.setText(location.toString());
-                        }
+                        System.out.println(location.toString());
                     }
                 });
->>>>>>> Stashed changes
             }
         });
 
