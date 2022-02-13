@@ -1,18 +1,20 @@
 package com.example.jar_hacks;
 
 import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 
 import java.net.URL;
 
 public class Picture {
     double lat, lon;
-    String desc, imageB64;
+    String desc;
+    int imDrawable;
 
-    public Picture(double lat, double lon, String desc, String imageB64){
+    public Picture(double lat, double lon, String desc, int imDrawable){
         this.lat = lat;
         this.lon = lon;
         this.desc = desc;
-        this.imageB64 = imageB64;
+        this.imDrawable = imDrawable;
     }
 
     public double getLat() {
@@ -39,11 +41,11 @@ public class Picture {
         this.desc = desc;
     }
 
-    public String getImageB64() {
-        return imageB64;
+    public int getImDrawable() {
+        return imDrawable;
     }
 
-    public void setImageB64(String imageB64) {
-        this.imageB64 = imageB64;
+    public void setImDrawable(int imDrawable) {
+        this.imDrawable = imDrawable;
     }
 }
