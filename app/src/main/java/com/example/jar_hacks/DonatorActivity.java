@@ -57,6 +57,10 @@ public class DonatorActivity extends AppCompatActivity {
             }
         });
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         requestPermission();
         client = LocationServices.getFusedLocationProviderClient(this);
         Button button = findViewById(R.id.submit);
@@ -85,7 +89,10 @@ public class DonatorActivity extends AppCompatActivity {
 
                     }
                 });
+<<<<<<< Updated upstream
                 startActivity(new Intent(DonatorActivity.this, MainActivity.class));
+=======
+>>>>>>> Stashed changes
             }
         });
     }
