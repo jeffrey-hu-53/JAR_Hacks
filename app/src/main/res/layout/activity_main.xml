@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#8BC34A"
+    android:background="#7AA34B"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,7 +12,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
+        android:layout_marginTop="124dp"
         android:layout_marginEnd="81dp"
+        android:layout_marginBottom="81dp"
         android:fontFamily="serif-monospace"
         android:gravity="center"
         android:text="Helping others and recycling made easy"
@@ -20,17 +22,20 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="588dp" />
+        app:layout_constraintTop_toBottomOf="@+id/doneeButt" />
 
     <Button
         android:id="@+id/donatorButt"
         android:layout_width="322dp"
         android:layout_height="58dp"
         android:layout_marginStart="153dp"
+        android:layout_marginTop="6dp"
         android:layout_marginEnd="153dp"
+        android:layout_marginBottom="17dp"
         android:background="@android:drawable/gallery_thumb"
         android:fontFamily="serif-monospace"
         android:text="Donator"
@@ -38,17 +43,20 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/doneeButt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="308dp" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/doneeButt"
         android:layout_width="322dp"
         android:layout_height="58dp"
         android:layout_marginStart="161dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="162dp"
+        android:layout_marginBottom="132dp"
         android:background="@android:drawable/gallery_thumb"
         android:fontFamily="serif-monospace"
         android:text="Donee"
@@ -56,31 +64,28 @@
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="391dp" />
+        app:layout_constraintTop_toBottomOf="@+id/donatorButt" />
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-<<<<<<< Updated upstream
         android:layout_marginStart="155dp"
+        android:layout_marginTop="16dp"
+
         android:layout_marginEnd="156dp"
-        android:layout_marginBottom="12dp"
-=======
-        android:layout_marginStart="141dp"
-        android:layout_marginEnd="142dp"
->>>>>>> Stashed changes
+        android:layout_marginBottom="14dp"
         android:visibility="visible"
+
+        app:layout_constraintBottom_toTopOf="@+id/donatorButt"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-<<<<<<< Updated upstream
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
         app:srcCompat="@drawable/jarlogo1"
-=======
-        app:srcCompat="@android:mipmap/sym_def_app_icon"
-        tools:layout_editor_absoluteY="197dp"
->>>>>>> Stashed changes
         tools:visibility="visible" />
 
     <TextView
@@ -88,42 +93,34 @@
         android:layout_width="178dp"
         android:layout_height="92dp"
         android:layout_marginStart="169dp"
+        android:layout_marginTop="12dp"
         android:layout_marginEnd="169dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="serif-monospace"
         android:text="JAR"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="#000000"
         android:textSize="96sp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
         app:layout_constraintEnd_toEndOf="parent"
-<<<<<<< Updated upstream
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/infoButt"
-        style="@style/Widget.AppCompat.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-=======
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="85dp" />
+        app:layout_constraintTop_toBottomOf="@+id/infoButt" />
 
     <Button
         android:id="@+id/infoButt"
         android:layout_width="103dp"
         android:layout_height="57dp"
->>>>>>> Stashed changes
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:text="Info"
         android:background="@android:drawable/gallery_thumb"
         android:fontFamily="serif-monospace"
+        android:text="Info"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+        android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="#000000"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
