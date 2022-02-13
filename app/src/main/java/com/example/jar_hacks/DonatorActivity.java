@@ -79,6 +79,7 @@ public class DonatorActivity extends AppCompatActivity {
                         System.out.println(location.toString());
                     }
                 });
+                startActivity(new Intent(DonatorActivity.this, MainActivity.class));
             }
         });
 
