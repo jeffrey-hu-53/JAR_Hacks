@@ -19,7 +19,8 @@ import java.util.ArrayList;
 
 public class DoneeActivity extends AppCompatActivity {
 
-    ListView listView;
+    private ListView listView;
+    private PictureAdapter pAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,16 +36,18 @@ public class DoneeActivity extends AppCompatActivity {
         arrayList.add(new Picture(40.7047962, -73.1327196, "left of shoprite", "Picture 3"));
         arrayList.add(new Picture(40.6047962, -73.1327196, "in front of staples", "Picture 4"));
 
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
+//        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
 
-        listView.setAdapter(arrayAdapter);
+        pAdapter = new PictureAdapter(this, arrayList);
+        listView.setAdapter(pAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(DoneeActivity.this, "clicked item:" + i + " " + arrayList.get(i).toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(DoneeActivity.this, "clicked item: " + i + " " + arrayList.get(i), Toast.LENGTH_SHORT).show();
                 float lat = (float)arrayList.get(i).getLat();
                 float lon = (float)arrayList.get(i).getLon();
+
                 Uri gmmIntentUri = Uri.parse("geo:" + lat + "," + lon + "?q=");
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
