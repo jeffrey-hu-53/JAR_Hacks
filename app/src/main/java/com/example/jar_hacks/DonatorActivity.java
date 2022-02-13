@@ -10,27 +10,15 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
 import android.Manifest;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.location.Location;
-import android.location.LocationManager;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.tasks.OnSuccessListener;
-import static android.Manifest.permission.ACCESS_FINE_LOCATION;
 
 
 public class DonatorActivity extends AppCompatActivity {
@@ -65,7 +53,7 @@ public class DonatorActivity extends AppCompatActivity {
 
         requestPermission();
         client = LocationServices.getFusedLocationProviderClient(this);
-        Button button = findViewById(R.id.btnGetLocation);
+        Button button = findViewById(R.id.submit);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
