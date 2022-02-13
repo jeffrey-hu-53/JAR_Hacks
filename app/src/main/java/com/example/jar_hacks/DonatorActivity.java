@@ -85,6 +85,7 @@ public class DonatorActivity extends AppCompatActivity {
 
                     }
                 });
+                startActivity(new Intent(DonatorActivity.this, MainActivity.class));
             }
         });
     }
