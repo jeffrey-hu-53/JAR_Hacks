@@ -36,7 +36,7 @@ public class DoneeActivity extends AppCompatActivity {
 
         ArrayList<Picture> arrayList = new ArrayList<>();
 
-        arrayList.add(new Picture(40.9047962, -73.1327196, "behind walgreens", R.drawable.garbage1));
+        arrayList.add(new Picture(40.9047962, -73.1327196, "behind walgreens", R.drawable.demo));
         arrayList.add(new Picture(40.8047962, -73.1327196, "right of cvs", R.drawable.garbage2));
         arrayList.add(new Picture(40.7047962, -73.1327196, "left of shoprite", R.drawable.garbage3));
         arrayList.add(new Picture(40.6047962, -73.1327196, "in front of staples", R.drawable.garbage4));
