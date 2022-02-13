@@ -23,17 +23,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.tasks.OnSuccessListener;
+import static android.Manifest.permission.ACCESS_FINE_LOCATION;
+
+
 public class DonatorActivity extends AppCompatActivity {
 
     ImageView imageView;
     Button button;
-
-    private static final int REQUEST_LOCATION = 1;
-    Button btnGetLocation;
-    TextView showLocation;
-    LocationManager locationManager;
-    String latitude, longitude;
-
+    private FusedLocationProviderClient client;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,6 +59,7 @@ public class DonatorActivity extends AppCompatActivity {
             }
         });
 
+<<<<<<< Updated upstream
         ActivityCompat.requestPermissions( this,
                 new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
         showLocation = findViewById(R.id.showLocation);
@@ -73,8 +74,30 @@ public class DonatorActivity extends AppCompatActivity {
                 System.out.println("if provider is enabled");
                 getLocation();
 
+=======
+        requestPermission();
+        client = LocationServices.getFusedLocationProviderClient(this);
+        Button button = findViewById(R.id.btnGetLocation);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(DonatorActivity.this, ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED ) {
+                    return;
+                }
+                client.getLastLocation().addOnSuccessListener(DonatorActivity.this, new OnSuccessListener(){
+                    @Override
+                    public void onSuccess(Object o) {
+                        Location location = (Location)o;
+                        if (location != null) {
+                            TextView textView = findViewById(R.id.showLocation);
+                            textView.setText(location.toString());
+                        }
+                    }
+                });
+>>>>>>> Stashed changes
             }
         });
+
 
     }
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data){
@@ -86,51 +109,8 @@ public class DonatorActivity extends AppCompatActivity {
         System.out.println("After taking picture");
     }
 
-    private void OnGPS() {
-        System.out.println("here");
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Enable GPS").setCancelable(false).setPositiveButton("Yes", new  DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
-            }
-        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
-            }
-        });
-        final AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+    private void requestPermission(){
+        ActivityCompat.requestPermissions(this, new String[]{ACCESS_FINE_LOCATION}, 1);
     }
 
-    private void getLocation() {
-        System.out.println("here2");
-
-        if (ActivityCompat.checkSelfPermission(
-
-                DonatorActivity.this,Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                DonatorActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            System.out.println("here3");
-            System.out.println("here3");
-
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
-        } else {
-            System.out.println("here44");
-
-            Location locationGPS = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
-            if (locationGPS != null) {
-                double lat = locationGPS.getLatitude();
-                double longi = locationGPS.getLongitude();
-                latitude = String.valueOf(lat);
-                longitude = String.valueOf(longi);
-                System.out.println(latitude + ", " + longitude);
-                showLocation.setText("Your Location: " + "\n" + "Latitude: " + latitude + "\n" + "Longitude: " + longitude);
-            } else {
-                System.out.println("here10");
-
-                Toast.makeText(this, "Unable to find location.", Toast.LENGTH_SHORT).show();
-            }
-        }
-    }
 }
