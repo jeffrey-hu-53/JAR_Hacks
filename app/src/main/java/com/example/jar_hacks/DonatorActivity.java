@@ -55,6 +55,7 @@ public class DonatorActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                 startActivityForResult(intent, 100);
+                System.out.println("onClick take a picture");
             }
         });
 
@@ -62,15 +63,16 @@ public class DonatorActivity extends AppCompatActivity {
                 new String[] {Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
         showLocation = findViewById(R.id.showLocation);
         btnGetLocation = findViewById(R.id.btnGetLocation);
-        btnGetLocation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                if (!locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
-                    getLocation();
-                } else {
-                    OnGPS();
-                }
+        btnGetLocation.setOnClickListener(v -> {
+            locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            if (!locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+                System.out.println("if provider not enabled");
+                OnGPS();
+
+            } else {
+                System.out.println("if provider is enabled");
+                getLocation();
+
             }
         });
 
@@ -81,6 +83,7 @@ public class DonatorActivity extends AppCompatActivity {
             Bitmap bitmap = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap((bitmap));
         }
+        System.out.println("After taking picture");
     }
 
     private void OnGPS() {
