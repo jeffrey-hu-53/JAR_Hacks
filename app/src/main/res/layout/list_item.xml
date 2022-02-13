@@ -7,15 +7,17 @@ android:layout_height="match_parent">
         android:id="@+id/textView_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/textView_pic"
+        android:layout_toRightOf="@id/imageView_pic"
         android:layout_margin="20dp"
         android:textSize="20sp"/>
 
-    <TextView
-        android:id="@+id/textView_pic"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView_pic"
+        android:layout_width="300px"
+        android:layout_height="300px"
         android:layout_margin="20dp"
         android:textSize="20sp"/>
+
+
 
 </RelativeLayout>

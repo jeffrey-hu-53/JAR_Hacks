@@ -8,6 +8,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -25,16 +27,19 @@ public class DoneeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.donee_main);
 
         listView = (ListView)findViewById(R.id.listView);
 
         ArrayList<Picture> arrayList = new ArrayList<>();
 
-        arrayList.add(new Picture(40.9047962, -73.1327196, "behind walgreens", "Picture 1"));
-        arrayList.add(new Picture(40.8047962, -73.1327196, "right of cvs", "Picture 2"));
-        arrayList.add(new Picture(40.7047962, -73.1327196, "left of shoprite", "Picture 3"));
-        arrayList.add(new Picture(40.6047962, -73.1327196, "in front of staples", "Picture 4"));
+        arrayList.add(new Picture(40.9047962, -73.1327196, "behind walgreens", R.drawable.garbage1));
+        arrayList.add(new Picture(40.8047962, -73.1327196, "right of cvs", R.drawable.garbage2));
+        arrayList.add(new Picture(40.7047962, -73.1327196, "left of shoprite", R.drawable.garbage3));
+        arrayList.add(new Picture(40.6047962, -73.1327196, "in front of staples", R.drawable.garbage4));
 
 //        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
 

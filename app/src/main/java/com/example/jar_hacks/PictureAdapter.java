@@ -36,8 +36,8 @@ public class PictureAdapter extends ArrayAdapter<Picture> {
 
         Picture currentPicture = picturesList.get(position);
 
-        TextView picName = (TextView) listItem.findViewById(R.id.textView_pic);
-        picName.setText(currentPicture.getImageB64());
+        ImageView picName = (ImageView) listItem.findViewById(R.id.imageView_pic);
+        picName.setImageResource(currentPicture.getImDrawable());
 
         TextView descName = (TextView) listItem.findViewById(R.id.textView_desc);
         descName.setText(currentPicture.getDesc());

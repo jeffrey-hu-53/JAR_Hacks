@@ -20,6 +20,8 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Base64;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -35,6 +37,9 @@ public class DonatorActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getSupportActionBar().hide();
         setContentView(R.layout.donator_main);
 
         imageView = findViewById(R.id.imageview);
@@ -57,10 +62,6 @@ public class DonatorActivity extends AppCompatActivity {
             }
         });
 
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
         requestPermission();
         client = LocationServices.getFusedLocationProviderClient(this);
         Button button = findViewById(R.id.submit);
@@ -79,7 +80,9 @@ public class DonatorActivity extends AppCompatActivity {
                         double lat = location.getLatitude();
                         double longitude = location.getLongitude();
                         String desc = "desc";
-                        String imageB64 = getImageData(pic);
+                        // I BROKE YOUR DATABASE HERE
+//                        String imageB64 = getImageData(pic);
+                        int imageB64 = 1;
                         // Send to data base
                         Picture field = new Picture(lat,longitude,desc, imageB64);
 
@@ -89,10 +92,7 @@ public class DonatorActivity extends AppCompatActivity {
 
                     }
                 });
-<<<<<<< Updated upstream
                 startActivity(new Intent(DonatorActivity.this, MainActivity.class));
-=======
->>>>>>> Stashed changes
             }
         });
     }
